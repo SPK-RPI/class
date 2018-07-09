@@ -1,5 +1,5 @@
 #include <iostream>
-#include<math.h>
+#include <math.h>
 using namespace std;
 
 class shapes
@@ -10,7 +10,8 @@ class shapes
     float side1;
     float side2;
     int shapes;
-float volume;
+    float volume;
+
   public:
     float circleArea(float radius)
     {
@@ -21,7 +22,7 @@ float volume;
     }
     float CircleSurfaceArea(float radius)
     {
-        area =  3.14 * pow(radius,2);
+        area = 3.14 * pow(radius, 2);
         return area;
     }
     float CircleSurfaceVolume(float radius)
@@ -29,7 +30,7 @@ float volume;
         volume = 2 * 3.14 * radius;
         return volume;
     }
-     float CircleCircumference(float radius)
+    float CircleCircumference(float radius)
     {
         volume = 2 * 3.14 * radius;
         return volume;
@@ -44,12 +45,26 @@ float volume;
         area = side1 * side2;
         return area;
     }
-    bool repeat()
+    bool repMainManu()
     {
         char a = 'n';
-        cout << "Go to main menu.(y/n)" << endl;
+        cout << "Go to main Menu.(y/n)" << endl;
         cin >> a;
-        if (a == 'y'||'Y')
+        if (a == 'y')
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    bool repSubManu()
+    {
+        char a = 'n';
+        cout << "Go to Sub Menu.(y/n)" << endl;
+        cin >> a;
+        if (a == 'y')
         {
             return true;
         }
@@ -80,6 +95,7 @@ float volume;
             cout << "| ==>";
             cin >> side;
             cout << "| " << square(side) << endl;
+            break;
         case 3:
             cout << "| Enter the sides " << endl;
             cout << "| ==>";
@@ -95,6 +111,7 @@ float volume;
     }
     void subMenuCircle()
     {
+
         cout << "+====================================================+" << endl;
         cout << "| Chose an option:                                   |" << endl;
         cout << "| 1. Area:                                           |" << endl;
@@ -126,7 +143,7 @@ float volume;
             cin >> radius;
             cout << "| " << CircleSurfaceVolume(radius) << endl;
             break;
-            case 4:
+        case 4:
             cout << "| Enter the radius " << endl;
             cout << "| ==>";
             cin >> radius;
@@ -143,14 +160,16 @@ float volume;
 
 int main()
 {
+
     for (;;)
     {
         shapes sh;
         sh.mainMenu();
-        if (sh.repeat() == true)
+        //sh.repMainManu();
+        if (sh.repMainManu() == true)
         {
             sh.mainMenu();
-            sh.repeat() == false;
+            sh.repMainManu() == false;
         }
         else
         {
