@@ -48,9 +48,9 @@ class shapes
     bool repMainManu()
     {
         char a = 'n';
-        cout << "Go to main Menu.(y/n)" << endl;
+        cout << "| Go to main Menu.(y/n)" << endl;
         cin >> a;
-        if (a == 'y')
+        if (a == 'y'||a=='Y')
         {
             return true;
         }
@@ -81,7 +81,7 @@ class shapes
         cout << "| 2. Square:                                         |" << endl;
         cout << "| 3. Rectangle:                                      |" << endl;
         cout << "+====================================================+" << endl;
-        cout << "==>";
+        cout << "| ==> ";
         cin >> shapes;
         switch (shapes)
         {
@@ -92,20 +92,25 @@ class shapes
         case 2:
 
             cout << "| Enter the side " << endl;
-            cout << "| ==>";
+            cout << "| ==> ";
             cin >> side;
-            cout << "| " << square(side) << endl;
+            cout << "| " << square(side) << " units" << endl;
+
             break;
         case 3:
             cout << "| Enter the sides " << endl;
-            cout << "| ==>";
+            cout << "| ==> ";
             cin >> side1;
-            cout << "| ==>";
+            cout << "| ==> ";
             cin >> side2;
-            cout << "| " << rectangle(side1, side2) << endl;
+            cout << "| " << rectangle(side1, side2) << " units" << endl;
             break;
         default:
-            cout << "| Not in options !!!" << endl;
+
+            system("CLS");
+            cout << "| Options are 1,2,3 !!!" << endl;
+            mainMenu();
+
             break;
         }
     }
@@ -119,38 +124,42 @@ class shapes
         cout << "| 3. Volume:                                         |" << endl;
         cout << "| 4. circumference:                                  |" << endl;
         cout << "+====================================================+" << endl;
-        cout << "==>";
+        cout << "| ==> ";
         cin >> shapes;
         switch (shapes)
         {
         case 1:
 
             cout << "| Enter the radius " << endl;
-            cout << "| ==>";
+            cout << "| ==> ";
             cin >> radius;
-            cout << "| " << circleArea(radius) << endl;
+            cout << "| " << circleArea(radius) << " units" << endl;
             break;
         case 2:
 
             cout << "| Enter the radius " << endl;
-            cout << "| ==>";
+            cout << "| ==> ";
             cin >> radius;
-            cout << "| " << CircleSurfaceArea(radius) << endl;
+            cout << "| " << CircleSurfaceArea(radius) << " units" << endl;
             break;
         case 3:
             cout << "| Enter the radius " << endl;
-            cout << "| ==>";
+            cout << "| ==> ";
             cin >> radius;
-            cout << "| " << CircleSurfaceVolume(radius) << endl;
+            cout << "| " << CircleSurfaceVolume(radius) << " units" << endl;
             break;
         case 4:
             cout << "| Enter the radius " << endl;
-            cout << "| ==>";
+            cout << "| ==> ";
             cin >> radius;
-            cout << "| " << CircleCircumference(radius) << endl;
+            cout << "| " << CircleCircumference(radius) << " units" << endl;
             break;
         default:
-            cout << "| Not in options !!!" << endl;
+
+            system("CLS");
+            cout << "| Options are 1,2,3,4 !!!" << endl;
+            subMenuCircle();
+
             break;
         }
     }
@@ -160,16 +169,14 @@ class shapes
 
 int main()
 {
-
+    shapes sh;
+    sh.mainMenu();
     for (;;)
     {
-        shapes sh;
-        sh.mainMenu();
-        //sh.repMainManu();
         if (sh.repMainManu() == true)
         {
+            system("CLS");
             sh.mainMenu();
-            sh.repMainManu() == false;
         }
         else
         {
@@ -177,6 +184,4 @@ int main()
             return 0;
         }
     }
-    system("pause");
-    return 0;
 }
