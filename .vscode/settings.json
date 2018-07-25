@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "malloc.h": "c",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "string_view": "c"
+    }
+}
