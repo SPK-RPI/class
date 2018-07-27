@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "-g","p1b.c"
+                "-g","p1c.c"
             ],
             "group": "build",
             "presentation": {
