@@ -1,4 +1,5 @@
-#include <iostream>
+#include<iostream>
+
 #include <math.h>
 using namespace std;
 
@@ -15,9 +16,8 @@ class shapes
   public:
     float circleArea(float radius)
     {
-
         area = 3.14 * radius * radius;
-
+    
         return area;
     }
     float CircleSurfaceArea(float radius)

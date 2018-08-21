@@ -3,7 +3,12 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/MinGW/include",
+                "/MinGW",
+                "/MinGW/lib/gcc/mingw32/6.3.0/include/c++"
+                
+                
             ],
             "defines": [
                 "_DEBUG",
@@ -11,7 +16,7 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "",
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "/user/bin/",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64"
